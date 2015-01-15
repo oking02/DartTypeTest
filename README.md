@@ -1,10 +1,7 @@
-# {{ projectName }}
+# {{ DartTypeTest }}
 
-A starter template for a polymer.dart web app.
+A web application written in Dart and making use of Web Component through Polymer.
 
-## Creating new elements
+## To Use
 
-The `polymer` package includes a utility to generate new elements. From
-within this project, run:
-
-`pub run polymer:new_element <name>`
+Go to https://www.dartlang.org/ and download the Dart + Editor. Unzip and start the editor. Go file, Open Existing Project and select the clone DartTypeTest folder. Then right click pubspec.yaml and run Pub Get. This will get all the nessesary dependencies. Finally right click index.html and select Run in Dartium. 
