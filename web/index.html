@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+
+  
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+  <title>TypeTest</title>
+  
+  
+
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- example of using a paper element -->
+
+  <link rel="import" href="../packages/paper_elements/paper_shadow.html">
+
+  <link rel="import" href="../packages/paper_elements/paper_item.html">
+  <link rel="import" href="../packages/core_elements/core_header_panel.html">
+  <link rel="import" href="../packages/core_elements/core_toolbar.html">
+  <link rel="import" href="../packages/core_elements/core_icons.html">
+  <link rel="import" href="../packages/core_elements/core_icon_button.html">
+  <link rel="import" href="../packages/core_elements/core_drawer_panel.html">
+  <link rel="import" href="../packages/core_elements/core_menu.html">
+  <link rel="import" href="../packages/core_elements/core_item.html">
+
+
+  <!-- example of your own custom element -->
+  <link rel="import" href="packages/TypeTest/type_test_app.html">
+  <link rel="import" href="packages/TypeTest/text_select_menu.html">
+
+  <script data-pub-inline src="packages/browser/dart.js"></script>
+
+  
+  <link rel="stylesheet" href="styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+ 
+  <style>
+  type-test {
+    width: 50%;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+
+}
+
+core-header-panel {
+    height: 100%;
+
+
+  }
+  core-toolbar {
+    background: #03a9f4;
+    color: white;
+  }
+  
+  type-test {  
+  width: 50%;
+  }
+  
+  [main]{
+  background: #CCC;
+  }
+  
+  [drawer]{
+  backgroud: #FFFFFF;
+  }
+  
+  core-drawer-panel:not([narrow]) #navicon {
+  display: none;
+  }
+
+</style>
+</head>
+
+
+
+<body fullbleed layout vertical unresolved >
+
+<core-drawer-panel forceNarrow drawerWidth="250px" id="drawerpanel">
+
+  <core-header-panel drawer>
+      <core-toolbar class="medium-tall">Menu</core-toolbar>
+      <!--<text-select-menu></text-select-menu>-->
+      <core-menu>
+      <core-item>A Item</core-item>
+      </core-menu>
+    </core-header-panel>
+
+  <core-header-panel main>
+  
+    <core-toolbar class="medium-tall">
+
+        <core-icon-button icon="menu" id="navicon" core-drawer-toggle></core-icon-button>
+        <p>Type Test Application</p>
+
+        
+        
+      
+    </core-toolbar>
+
+  
+    <type-test>
+    <p id="typetarget">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum." Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem 
+            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi 
+            tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis 
+            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil 
+            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    
+    </type-test>
+    
+    <!--<text-select-menu></text-select-menu>-->
+ 
+    
+
+    
+  </core-header-panel>
+  
+  </core-drawer-panel>
+  <script type="application/dart">export 'package:polymer/init.dart';</script>
+
+
+
+  
+
+</body>
+</html>

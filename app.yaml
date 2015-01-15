@@ -1,0 +1,5 @@
+application: type-speed
+version: type-speed
+runtime: custom
+vm: true
+api_version: 1

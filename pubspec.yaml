@@ -1,0 +1,18 @@
+name: TypeTest
+version: 0.0.1
+description: A starter template for a polymer.dart web app.
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  appengine: any
+  browser: any
+  core_elements: any
+  paper_elements: 0.6.0+4
+  polymer: any
+  script_inliner: any
+  template_binding: any
+  web_components: any
+transformers:
+- polymer:
+    entry_points: web/index.html
+- script_inliner

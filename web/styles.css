@@ -1,0 +1,43 @@
+/* Copyright (c) 2015, <your name>. All rights reserved. Use of this source code */
+/* is governed by a BSD-style license that can be found in the LICENSE file. */
+
+body {
+    font-family: RobotoDraft;
+    color: #333;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+
+}
+
+core-header-panel {
+    height: 100%;
+
+
+  }
+  core-toolbar {
+    background: #03a9f4;
+    color: white;
+  }
+  
+  type-test {  
+  width: 50%;
+  }
+  
+  [main]{
+  background: #CCC;
+  }
+  
+  [drawer]{
+  backgroud: #FFFFFF;
+  background-color: #FFFFFF;
+  }
+  
+  core-drawer-panel:not([narrow]) #navicon {
+  display: none;
+  }
+  
+

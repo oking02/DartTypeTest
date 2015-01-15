@@ -1,0 +1,58 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_shadow.html">
+<polymer-element name="text-item" extends="li">
+<template>
+<style>
+
+:host{
+  font-family: RobotoDraft;
+  list-style: none; 
+  color: #FFFFFF;
+}
+
+
+
+.cardName {
+background-color: #607D8B;
+padding: 0px 10px 10px 10px;
+color: #FFFFFF;
+}
+
+.cardLength {
+background-color: #607D8B;
+padding: 10px;
+color: #FFFFFF;
+}
+
+.cardFooter {
+background-color: #FFFFFF;
+padding: 15px;
+color: black;
+border-top: 2px solid black;
+}
+
+.card {
+  padding: 0px;
+  margin: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+
+
+
+
+
+</style>
+<paper-shadow z="1" layout vertical start-justified class="card">
+
+  <div layout horizontal start-justified class="cardName"><content select=".name" id="title"></content></div>
+  <div layout horizontal start-justified class="cardLength"><content select=".length" id="length"></content> </div>
+  <div layout horizontal class="cardFooter">aaaa</div>
+
+</paper-shadow>
+
+</template>
+<script type="application/dart" src="text_item.dart"></script>
+</polymer-element>

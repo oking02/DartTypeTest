@@ -1,0 +1,160 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link href="../../packages/core_elements/core_animated_pages.html" rel="import">
+<link href="../../packages/core_elements/core_icons.html" rel="import">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_fab.html">
+<link href="../../packages/core_elements/src/core-animated-pages/transitions/hero-transition.html" rel="import">
+<link href="../../packages/core_elements/src/core-animated-pages/transitions/slide-up.html" rel="import">
+<link href="../../packages/core_elements/src/core-animated-pages/transitions/list-cascade.html" rel="import">
+<link rel="import" href="text_item.html">
+<polymer-element name="text-select-menu">/home/oking/dart/TypeTest/packages/core_elements/src/core-animated-pages/transitions/hero-transition.html
+
+<template>
+
+<style>
+
+    :host {
+    font-family: RobotoDraft;
+    }
+
+      #details {
+
+      }
+      .card {
+        height: 250px;
+        width: 90%;
+        border-radius: 3px;
+        background: #fff;
+        padding: 20px;
+        margin: 15px;
+
+      }
+      .card-left {
+        width: 100px;
+      }
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+        padding-bottom: 5px;
+      }
+      
+      .card-album-artist {
+        padding: 5px;
+      }
+      
+      .box{
+      width: 50%;
+      }
+      
+      #choosebtn {
+      color: #03a9f4;
+      }
+      
+      .addBox {
+      width: 150px;
+      height: 150px;
+      margin: 15px;
+      }
+      
+    fab {
+        position: absolute;
+        fill: #fff;
+      }
+      .fab-0 {
+        bottom: 50px;
+        right: 24px;
+      }
+      
+      .top {
+        background-color: #ffff8d;
+      }
+      
+      .bottom {
+        box-sizing: border-box;
+        position: relative;
+        height: 80px;
+        background-color: #ffeb3b;
+        padding: 24px;
+        color: #fff;
+        font-size: 32px;
+      }
+      
+      #supper {
+      height: 100%;
+      }
+      
+      
+      
+
+
+ </style>
+ 
+ <div layout vertical>
+ <div layout vertical>
+<core-animated-pages selected="{{page}}" transitions="hero-transition">
+
+
+
+  <section class="chip-container" hero-p on-tap="{{transition}}">
+  <div layout horizontal center >
+      <ul flex horizontal wrap class="itemGrid" layout> 
+        <template repeat="{{item in items}}">
+          <li is="text-item" hero-id="{{item.name}}-{{item.id}}" hero?="{{selectedAlbum == item }}">
+            <h4 class="name">{{item.name}}</h4>
+            <p class="length">Length: {{item.length}}</p>
+          </li>    
+        </template>
+        <div layout horizontal center center-justified class="addBox">
+
+            <paper-fab  icon="add" on-tap="{{transition1}}"></paper-fab>
+       
+        
+    
+        </div>      
+      </ul>
+   </div>
+  </section>
+
+
+
+ 
+
+  <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.name}}-{{selectedAlbum.id}}" hero on-tap="{{transition}}">
+          <div class="card-left" hero-id="{{selectedAlbum.name}}-{{selectedAlbum.id}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+      
+              <div layout vertical flex>
+                <div class="card-album-title">{{selectedAlbum.name}}</div>
+                <div class="card-album-artist">{{selectedAlbum.content}}</div>
+                <div layout horizontal end-justified><paper-button id="choosebtn">Choose</paper-button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+ </section>
+
+
+ 
+</core-animated-pages>
+</div>
+
+<div layout vertical end-justified>
+
+</div>
+
+</div>
+
+</template>
+
+
+
+<script type="application/dart" src="text_select_menu.dart"></script>
+
+</polymer-element>

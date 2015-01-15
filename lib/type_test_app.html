@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_dropdown.html">
+<link rel="import" href="../../packages/paper_elements/paper_dropdown_menu.html">
+<link rel="import" href="../../packages/paper_elements/paper_menu_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_shadow.html">
+<link rel="import" href="../../packages/paper_elements/paper_item.html">
+<link rel="import" href="../../packages/paper_elements/paper_radio_group.html">
+<link rel="import" href="../../packages/paper_elements/paper_radio_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_dialog.html">
+<link href="../../packages/core_elements/core_media_query.html" rel="import">
+<link href="../../packages/core_elements/core_menu_button.html" rel="import">
+ 
+<link href="../../packages/core_elements/core_dropdown.html" rel="import">
+<link href="../../packages/core_elements/core_menu.html" rel="import">
+
+
+
+<polymer-element name="type-test">
+
+  <template unresolved>
+    <style>
+      :host {
+        background-color: #CCC;
+        text-align: center;
+        margin: 50px;
+
+      }
+      
+      #typearea{
+
+      margin: 10px;
+      }
+      
+      .topCards{
+      height : auto;
+      }
+      
+      #textBox {
+        background-color: #FFFFFF;
+        width : 70%;      
+        padding: 20px;
+        margin: 15px;
+        line-height: 200%;
+      }
+      
+      #scores {
+      background-color: #FFFFFF;
+      width: 15%;
+  
+      padding: 10px;
+      margin: 15px;
+      }
+
+      #resetbutton {
+        background: #CDDC39;
+        margin: 10px;
+      }
+      
+      #reloadbutton {
+        background: #FF9800;
+        margin: 10px;
+        }
+      
+      #optionsCard {
+        background-color: #FFFFFF;
+        width : 20%;
+        
+       
+        padding: 15px;
+        margin:15px 35px 15px 15px;
+
+      }
+      
+      paper-spinner.blue::shadow .circle {
+      border-color: #4285f4;
+      }
+      
+      .scorebutton {
+      padding: 10px;
+      }
+      
+      .scoreList {
+      list-style-type: none;
+      }
+     
+      
+    </style>
+    
+    <div horizontal center-justified layout>
+
+        <paper-shadow z="1" id="textBox" class="topCards">
+            <h2>TextBox</h2>
+            <content id="typeTemplate" select="p"></content>
+
+        </paper-shadow>
+            
+                   
+        <paper-shadow z="1" id="scores" class="topCards">        
+           <core-media-query query="max-width: 1770px" queryMatches="{{smallScreen}}"></core-media-query>
+
+            
+                    
+           <div layout vertical center-justified>
+     <template if="{{!smallScreen}}">
+           <ul class="scoreList" start-justified  horizontal wrap layout>
+             <li> 
+                <div layout vertical center class="scorebutton" >
+                   <label  for="wpm">Words </label>
+                   <paper-button  raised id="wpm" >{{words}}</paper-button>
+                 </div>
+             </li>
+           <li> 
+              <div layout vertical class="scorebutton">
+                 <label  for="timerBox">Timer</label>
+                 <paper-button  raised id="timerBox" >{{timer}}</paper-button>
+               </div>
+           </li>
+           
+           <li> 
+              <div layout vertical class="scorebutton">
+                   <label  for="rateBox">Word/min</label>
+                   <paper-button raised id="rateBox" >{{rate}}</paper-button>
+               </div>
+           </li>
+           
+           <li> 
+              <div layout vertical class="scorebutton">
+                 <label  for="accBox">Accuracy</label>
+                 <paper-button  raised id="accBox" >{{acc}}</paper-button>
+               </div>
+           </li>
+           
+           <li> 
+              <div layout vertical class="scorebutton">
+                 <label for="lastTime">Last Rate</label>
+                 <paper-button raised id="lastTime" >{{lasttime}}</paper-button>
+               </div>
+           </li>
+           <li> 
+              <div layout vertical class="scorebutton">
+                 <label  for="lastAcc">Last Acc</label>
+                 <paper-button raised id="lastAcc" >{{lastacc}}</paper-button>
+               </div>
+           </li>
+           <li> 
+              <div layout vertical class="scorebutton">
+                 <label  for="bestTime">Best Rate</label>
+                 <paper-button raised id="bestTime" >{{besttime}}</paper-button>
+               </div>
+           </li>
+           <li> 
+              <div layout vertical class="scorebutton">
+                 <label  for="bestAcc">Best Acc</label>
+                 <paper-button  raised id="bestAcc" >{{bestacc}}</paper-button> 
+               </div> 
+           </li>
+           
+           </ul>
+           
+            </template>
+            
+            <template if="{{smallScreen}}">
+            <div horizontal layout>
+            
+
+              
+              <paper-menu-button>
+                  <paper-icon-button icon="menu" noink></paper-icon-button>
+                  <paper-dropdown class="dropdown">
+                      <core-menu class="menu">
+                          <paper-item horizontal layout>
+                              <label  for="accBox">Accuracy</label>
+                              <paper-button id="accBox" >{{acc}}</paper-button>
+                          </paper-item>               
+                          <paper-item horizontal layout>
+                              <label for="lastTime">Last Rate</label>
+                              <paper-button id="lastTime" >{{lasttime}}</paper-button>
+                          </paper-item>            
+                          <paper-item horizontal layout>
+                            <label  for="lastAcc">Last Acc</label>
+                            <paper-button id="lastAcc" >{{lastacc}}</paper-button>
+                          </paper-item>
+                          <paper-item horizontal layout>
+                            <label  for="bestTime">Best Rate</label>
+                            <paper-button id="bestTime" >{{besttime}}</paper-button>
+                          </paper-item>
+                          <paper-item horizontal layout>
+                            <label  for="bestAcc">Best  Acc</label>
+                            <paper-button id="bestAcc" >{{bestacc}}</paper-button> 
+                          </paper-item>
+                      </core-menu>
+                  </paper-dropdown>
+              </paper-menu-button>
+               
+               <ul class="scoreList" horizontal wrap layout>
+                 <li> 
+                    <div layout vertical center class="scorebutton" >
+                       <label  for="wpm">Words </label>
+                       <paper-button  raised id="wpm" >{{words}}</paper-button>
+                     </div>
+                 </li>
+                 <li> 
+                    <div layout vertical class="scorebutton">
+                       <label  for="timerBox">Timer</label>
+                       <paper-button  raised id="timerBox" >{{timer}}</paper-button>
+                     </div>
+                 </li>
+             
+                   <li> 
+                      <div layout vertical class="scorebutton">
+                           <label  for="rateBox">Word/min</label>
+                           <paper-button raised id="rateBox" >{{rate}}</paper-button>
+                       </div>
+                   </li>
+               </ul>                      
+            </div>
+            </template>
+            
+             <div>
+               <p>Rate Calculation</p>
+               
+               <paper-radio-group selected="small">
+                  <paper-radio-button id="grosswpm" name="small" label="Gross WPM"></paper-radio-button>
+                  <paper-radio-button id="netwpm" name="medium" label="Net WPM"></paper-radio-button>
+               </paper-radio-group>
+            </div>
+            
+            
+           </div>   
+                      
+       </paper-shadow>    
+
+    </div >
+     
+     <div horizontal  layout>
+      
+       <div flex  layout horizontal center-justified>   
+          <textarea placeholder="Type here. Will begin upon first letter typed. Press enter to finish" id="typearea" cols="99" rows="8"></textarea> 
+          
+           <div center layout vertical>
+            <paper-button raised id="resetbutton" on-click="{{resetTypeBox}}">Reset</paper-button>
+
+            <paper-button raised id="reloadbutton" on-click="{{toggleDialog}}">
+            Help
+            <paper-dialog heading="Help"><p>Some dialog</p></paper-dialog>
+            </paper-button> 
+        
+           </div>       
+       </div>
+               
+
+
+     </div>
+    
+  </template>
+
+
+  <script type="application/dart" src="type_test_app.dart"></script>
+
+
+</polymer-element>
